@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0e27"/>
+      <stop offset="0.5" stop-color="#001f54"/>
+      <stop offset="1" stop-color="#050818"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0.85" cy="0.2" r="0.6">
+      <stop offset="0" stop-color="#ffb400" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#ffb400" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.15" cy="0.85" r="0.5">
+      <stop offset="0" stop-color="#ff6b35" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#ff6b35" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="coinFace" cx="0.4" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#fff5b8"/>
+      <stop offset="0.4" stop-color="#ffd633"/>
+      <stop offset="1" stop-color="#ff6b35"/>
+    </radialGradient>
+    <linearGradient id="coinEdge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff9500"/>
+      <stop offset="1" stop-color="#7a3500"/>
+    </linearGradient>
+    <linearGradient id="goldText" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd633"/>
+      <stop offset="1" stop-color="#ff6b35"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12"/>
+      <feOffset dx="0" dy="14" result="off"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.55"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <g opacity="0.85">
+    <circle cx="120" cy="80" r="2" fill="#ffb400"/>
+    <circle cx="280" cy="180" r="1.5" fill="#ffd633"/>
+    <circle cx="180" cy="430" r="2" fill="#ff6b35"/>
+    <circle cx="460" cy="540" r="1.5" fill="#ffb400"/>
+    <circle cx="80" cy="320" r="1" fill="#ffd633"/>
+    <circle cx="600" cy="60" r="1.5" fill="#ffb400"/>
+    <circle cx="1100" cy="500" r="2" fill="#ff6b35"/>
+    <circle cx="1140" cy="120" r="1" fill="#ffd633"/>
+  </g>
+
+  <g transform="translate(910 315)" filter="url(#shadow)">
+    <ellipse cx="0" cy="180" rx="180" ry="22" fill="#000" opacity="0.55"/>
+    <circle cx="0" cy="0" r="180" fill="url(#coinEdge)"/>
+    <circle cx="0" cy="-8" r="172" fill="url(#coinFace)"/>
+    <circle cx="0" cy="-8" r="144" fill="none" stroke="#ff6b35" stroke-width="3" opacity="0.6"/>
+    <text x="0" y="32" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="138" fill="#7a3500">1W</text>
+    <circle cx="-58" cy="-58" r="14" fill="#fff" opacity="0.6"/>
+    <circle cx="58" cy="-78" r="6" fill="#fff" opacity="0.4"/>
+  </g>
+
+  <g transform="translate(80 130)">
+    <text x="0" y="0" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="28" fill="#ffb400" letter-spacing="6">1WIN.MOSCOW</text>
+    <text x="0" y="120" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="108" fill="#ffffff" letter-spacing="-3">1win <tspan fill="url(#goldText)">Москва</tspan></text>
+    <text x="0" y="210" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="700" font-size="48" fill="#e5e7eb">Букмекер №1 для столицы</text>
+
+    <g transform="translate(0 270)">
+      <rect x="0" y="0" width="380" height="78" rx="14" fill="url(#goldText)"/>
+      <text x="190" y="52" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="34" fill="#0a0e27">+500% БОНУС</text>
+    </g>
+
+    <g transform="translate(400 270)">
+      <rect x="0" y="0" width="280" height="78" rx="14" fill="rgba(255,255,255,0.1)" stroke="#ffb400" stroke-width="2"/>
+      <text x="140" y="52" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="28" fill="#ffd633">slots1win500</text>
+    </g>
+
+    <g transform="translate(0 380)">
+      <text x="0" y="0" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="22" fill="#c5c8d6">Зеркало • Регистрация • Aviator • Слоты • Ставки</text>
+      <text x="0" y="36" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="22" fill="#8a8fa3">Лицензия Кюрасао 8048/JAZ • 12+ млн игроков</text>
+    </g>
+  </g>
+
+  <rect x="0" y="624" width="1200" height="6" fill="url(#goldText)"/>
+</svg>
