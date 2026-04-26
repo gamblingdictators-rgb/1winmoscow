@@ -1,18 +1,32 @@
-/* === 1win.moscow — Premium Dark Theme === */
+/* === 1win.moscow — Indigo-Purple Premium Theme === */
 :root {
-  --bg-deep: #0a0e27;
-  --bg-card: #0f1538;
+  --bg-deep: #0a0826;
+  --bg-card: #15103a;
   --bg-soft: rgba(255,255,255,0.04);
-  --gold: #ffb400;
-  --gold-light: #ffd633;
-  --gold-dark: #ff6b35;
+  /* Accent — indigo→purple gradient family */
+  --accent: #8b5cf6;
+  --accent-light: #a78bfa;
+  --accent-dark: #6d28d9;
+  --indigo: #4338ca;
+  --indigo-light: #6366f1;
+  /* Silver accents (replacing gold) */
+  --silver: #e2e8f0;
+  --silver-light: #f1f5f9;
+  --silver-dark: #94a3b8;
+  /* Text */
   --text: #ffffff;
-  --text-soft: #c5c8d6;
-  --text-mute: #8a8fa3;
-  --border: rgba(255,180,0,0.15);
-  --border-strong: rgba(255,180,0,0.4);
-  --green: #22c55e;
-  --green-dark: #16a34a;
+  --text-soft: #c7cce0;
+  --text-mute: #8b8fb0;
+  /* Borders */
+  --border: rgba(167,139,250,0.18);
+  --border-strong: rgba(167,139,250,0.45);
+  /* CTA accents */
+  --green: #10b981;
+  --green-dark: #059669;
+  /* Legacy aliases for backward compatibility (used across pages) */
+  --gold: var(--accent);
+  --gold-light: var(--accent-light);
+  --gold-dark: var(--accent-dark);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -115,13 +129,13 @@ img { max-width: 100%; height: auto; display: block; }
 .btn-header-reg {
   color: var(--bg-deep);
   background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
-  box-shadow: 0 4px 16px rgba(255,180,0,0.4);
+  box-shadow: 0 4px 16px rgba(167,139,250,0.4);
 }
 
 .btn-header-login:hover,
 .btn-header-reg:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(255,180,0,0.5);
+  box-shadow: 0 6px 20px rgba(167,139,250,0.5);
   color: var(--bg-deep);
 }
 
@@ -159,13 +173,25 @@ img { max-width: 100%; height: auto; display: block; }
   margin-bottom: 40px;
   border-radius: 28px;
   background:
-    radial-gradient(ellipse 800px 600px at 80% 20%, rgba(255,180,0,0.25), transparent 60%),
-    radial-gradient(ellipse 600px 400px at 20% 80%, rgba(255,107,53,0.15), transparent 60%),
-    radial-gradient(ellipse 400px 300px at 50% 50%, rgba(34,197,94,0.08), transparent 70%),
-    linear-gradient(135deg, #0d1538 0%, #001f54 100%);
+    radial-gradient(ellipse 800px 600px at 80% 20%, rgba(167,139,250,0.18), transparent 60%),
+    radial-gradient(ellipse 600px 400px at 20% 80%, rgba(99,102,241,0.12), transparent 60%),
+    linear-gradient(135deg, #0a0826 0%, #15103a 50%, #1e1b4b 100%);
   border: 1px solid var(--border);
   overflow: hidden;
   isolation: isolate;
+}
+
+/* WebGL plasma shader canvas — sits behind everything in hero */
+.hero-shader {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: block;
+  pointer-events: none;
+  opacity: 0.85;
+  mix-blend-mode: screen;
 }
 
 /* Animated mesh gradient layer */
@@ -174,8 +200,8 @@ img { max-width: 100%; height: auto; display: block; }
   position: absolute;
   inset: -50%;
   background:
-    radial-gradient(circle at 30% 30%, rgba(255,180,0,0.18), transparent 40%),
-    radial-gradient(circle at 70% 70%, rgba(255,107,53,0.12), transparent 50%),
+    radial-gradient(circle at 30% 30%, rgba(167,139,250,0.18), transparent 40%),
+    radial-gradient(circle at 70% 70%, rgba(139,92,246,0.12), transparent 50%),
     radial-gradient(circle at 50% 50%, rgba(34,197,94,0.06), transparent 60%);
   filter: blur(60px);
   animation: meshFloat 20s ease-in-out infinite alternate;
@@ -195,12 +221,12 @@ img { max-width: 100%; height: auto; display: block; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(2px 2px at 15% 25%, rgba(255,180,0,0.8), transparent),
-    radial-gradient(1px 1px at 45% 65%, rgba(255,180,0,0.6), transparent),
-    radial-gradient(2px 2px at 75% 35%, rgba(255,107,53,0.7), transparent),
-    radial-gradient(1px 1px at 88% 75%, rgba(255,180,0,0.5), transparent),
-    radial-gradient(1px 1px at 25% 80%, rgba(255,180,0,0.6), transparent),
-    radial-gradient(2px 2px at 60% 15%, rgba(255,107,53,0.7), transparent);
+    radial-gradient(2px 2px at 15% 25%, rgba(167,139,250,0.8), transparent),
+    radial-gradient(1px 1px at 45% 65%, rgba(167,139,250,0.6), transparent),
+    radial-gradient(2px 2px at 75% 35%, rgba(139,92,246,0.7), transparent),
+    radial-gradient(1px 1px at 88% 75%, rgba(167,139,250,0.5), transparent),
+    radial-gradient(1px 1px at 25% 80%, rgba(167,139,250,0.6), transparent),
+    radial-gradient(2px 2px at 60% 15%, rgba(139,92,246,0.7), transparent);
   background-size: 100% 100%;
   animation: sparkle 8s ease-in-out infinite;
   pointer-events: none;
@@ -228,7 +254,7 @@ img { max-width: 100%; height: auto; display: block; }
   height: 280px;
   z-index: 1;
   animation: coinFloat 6s ease-in-out infinite;
-  filter: drop-shadow(0 20px 60px rgba(255,180,0,0.4));
+  filter: drop-shadow(0 20px 60px rgba(167,139,250,0.4));
 }
 
 @keyframes coinFloat {
@@ -285,7 +311,7 @@ img { max-width: 100%; height: auto; display: block; }
 .cta-btn-yellow {
   background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
   color: var(--bg-deep);
-  box-shadow: 0 6px 24px rgba(255,180,0,0.4);
+  box-shadow: 0 6px 24px rgba(167,139,250,0.4);
 }
 
 .cta-btn-outline {
@@ -296,7 +322,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .cta-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(255,180,0,0.5);
+  box-shadow: 0 10px 28px rgba(167,139,250,0.5);
   color: var(--bg-deep);
 }
 
@@ -388,7 +414,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* === Info-box === */
 .info-box {
-  background: linear-gradient(135deg, rgba(255,180,0,0.1), rgba(255,107,53,0.05));
+  background: linear-gradient(135deg, rgba(167,139,250,0.1), rgba(139,92,246,0.05));
   border: 1px solid var(--border-strong);
   border-radius: 16px;
   padding: 20px 24px;
@@ -431,7 +457,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 14px;
 }
 
-.article tr:hover td { background: rgba(255,180,0,0.04); }
+.article tr:hover td { background: rgba(167,139,250,0.04); }
 
 /* === Bonus banner === */
 .bonus-banner {
@@ -442,7 +468,7 @@ img { max-width: 100%; height: auto; display: block; }
   padding: 24px 28px;
   margin: 32px 0;
   border-radius: 16px;
-  background: linear-gradient(135deg, #1a3a8e, #0d4f8b);
+  background: linear-gradient(135deg, #2e1065, #4338ca);
   border: 1px solid var(--border-strong);
   position: relative;
   overflow: hidden;
@@ -455,7 +481,7 @@ img { max-width: 100%; height: auto; display: block; }
   top: -40px;
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(255,180,0,0.3), transparent 70%);
+  background: radial-gradient(circle, rgba(167,139,250,0.3), transparent 70%);
   pointer-events: none;
 }
 
@@ -513,17 +539,17 @@ img { max-width: 100%; height: auto; display: block; }
   transition: all 0.15s;
 }
 .sidebar-links a:hover {
-  background: rgba(255,180,0,0.08);
+  background: rgba(167,139,250,0.08);
   color: var(--gold);
 }
 .sidebar-links a.active {
-  background: rgba(255,180,0,0.15);
+  background: rgba(167,139,250,0.15);
   color: var(--gold);
   font-weight: 700;
 }
 
 .sidebar-bonus {
-  background: linear-gradient(135deg, #1a3a8e, #0d4f8b);
+  background: linear-gradient(135deg, #2e1065, #4338ca);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -605,7 +631,7 @@ img { max-width: 100%; height: auto; display: block; }
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 50%), rgba(255,180,0,0.1), transparent 40%);
+  background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 50%), rgba(167,139,250,0.1), transparent 40%);
   opacity: 0;
   transition: opacity 0.3s;
   pointer-events: none;
